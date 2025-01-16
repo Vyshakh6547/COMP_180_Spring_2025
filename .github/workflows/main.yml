@@ -15,7 +15,8 @@ jobs:
         uses: pmd/pmd-github-action@v1
         with:
           sourcePath: '.' 
-          rulesets: 'cpp-basic' # Use a valid ruleset like 'cpp-basic'
+          rulesets: 'cpp-basic' 
+          debug: true # Enable debug logging
       - name: Upload CPD report
         uses: actions/upload-artifact@v3
         with:
