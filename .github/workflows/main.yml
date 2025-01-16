@@ -17,7 +17,7 @@ jobs:
         uses: pmd/pmd-github-action@v1
         with:
           sourcePath: '.' 
-          rulesets: 'cpp-basic' 
+          rulesets: 'cpp/basic' 
 
       - name: Upload CPD report
         uses: actions/upload-artifact@v3
