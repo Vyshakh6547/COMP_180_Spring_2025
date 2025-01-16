@@ -1,0 +1,43 @@
+name: Moss Code Style Check
+
+
+
+on:
+
+  push:
+
+    branches: [ main ]
+
+  pull_request:
+
+    types: [ opened, synchronize ]
+
+
+
+jobs:
+
+  moss_check:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: Install Moss
+
+        run: | 
+
+          sudo apt-get update
+
+          sudo apt-get install -y moss
+
+
+
+      - name: Run Moss Analysis
+
+        run: | 
+
+          moss -d reports -l 10 -r '*.py' .  # Adjust options as needed
+
+          # Add commands to create annotations if desired
