@@ -3,7 +3,7 @@ name: Plagiarism Check
 on:
   push:
     branches:
-      - main  # Or the branch where students submit
+      - main 
 
 jobs:
   build:
@@ -16,9 +16,8 @@ jobs:
       - name: Run CPD
         uses: pmd/pmd-github-action@v1
         with:
-          languages: cpp
-          minimum-tokens: 100       
-          format: text                
+          sourcePath: '.' 
+          rulesets: 'cpp-basic' 
 
       - name: Upload CPD report
         uses: actions/upload-artifact@v3
