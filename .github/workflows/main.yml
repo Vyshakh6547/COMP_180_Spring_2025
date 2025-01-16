@@ -12,11 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       - name: Run CPD
-        uses: pmd/pmd-github-action@v1
+        uses: pmd/pmd-github-action@latest # Use the latest version 
         with:
           sourcePath: '.' 
           rulesets: 'cpp-basic' 
-          debug: true # Enable debug logging
       - name: Upload CPD report
         uses: actions/upload-artifact@v3
         with:
