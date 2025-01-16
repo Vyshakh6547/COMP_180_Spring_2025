@@ -1,4 +1,4 @@
-# COMP_180_Spring_2025
+# COMP 180 Spring 2025
 Fundamentals of Computer Science (Spring 2025)
 The course emphasizes program design and problem solving techniques that use a high-level programming language. The course introduces basic concepts of programming and then applies them to discrete math concepts and data structures through supervised labs.
 
