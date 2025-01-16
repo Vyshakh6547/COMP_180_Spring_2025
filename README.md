@@ -17,6 +17,7 @@ e-mail: mlanners@pacific.edu
 office hours: M 11-12 & Thurs 1:30-2:30 or by appointment
 
 Online materials for the course will be available at: pacific.instructure.com (canvas page for the course)
+
 TA
 
 Vyshakh Prasad
