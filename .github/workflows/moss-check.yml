@@ -15,8 +15,8 @@ jobs:
 
       - name: Install Moss
         run: |
-          # Download the Moss script
-          curl -O https://moss.stanford.edu/results/moss2019.tar.gz
+          # Download the Moss script using wget
+          wget --https-only https://moss.stanford.edu/results/moss2019.tar.gz
           
           # Extract the script
           tar -xvzf moss2019.tar.gz
@@ -31,6 +31,3 @@ jobs:
         run: |
           # Run Moss analysis with C++ options
           ./moss -d reports -l c++ -r '*.cpp' .  # C++ language (-l c++) and analyze *.cpp files
-
-          # Optionally, you can output the result link here or store it
-          # Example: ./moss -d reports -l c++ -r '*.cpp' . && echo "Moss report link: $MOSS_REPORT_URL"
