@@ -1,9 +1,9 @@
-name: Moss Code Style Check
+name: MossPlagiarismChecker
 
 on:
   push:
     branches:
-      - main  # Replace with your main branch name
+      - main
 
 jobs:
   moss:
@@ -13,16 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Moss
+      - name: Install Python and mosspy
         run: |
           sudo apt-get update
-          sudo apt-get install -y perl
-          wget http://theory.stanford.edu/~aiken/moss/moss.pl
-          chmod +x moss.pl
+          sudo apt-get install -y python3 python3-pip
+          pip3 install mosspy
 
-      - name: Run Moss
+      - name: Run Moss using mosspy
         run: |
-          ./moss.pl -l cpp -d $(find . -name "*.cpp") > moss_results.txt
+          python3 -c "
+          from mosspy import Moss
+          m = Moss('<YOUR_MOSS_ID>', 'cpp')  # Replace with your Moss ID
+          for file in $(find . -name '*.cpp'):
+            m.addFile(file)
+          url = m.send()
+          print(url)  # Print the Moss results URL
+          " > moss_results.txt
 
       - name: Upload Moss results
         uses: actions/upload-artifact@v3
