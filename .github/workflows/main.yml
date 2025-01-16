@@ -15,7 +15,6 @@ jobs:
         uses: pmd/pmd-github-action@latest # Use the latest version 
         with:
           sourcePath: '.' 
-          rulesets: 'cpp-basic' 
       - name: Upload CPD report
         uses: actions/upload-artifact@v3
         with:
