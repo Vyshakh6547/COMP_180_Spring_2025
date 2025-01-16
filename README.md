@@ -25,4 +25,31 @@ v_prasad@u.pacific.edu
 
 Office hours: SSC - F: 2-3pm
 
- 
+ ## Instructions for Submitting Code
+
+Please follow the folder naming convention and submission guidelines as described below.
+
+### Folder Naming Convention:
+
+1. **Create a folder** for your code using the format:
+Firstname_Last4DigitsofYourPacificID
+- **Firstname**: Your first name (without spaces or special characters).
+- **Last4DigitsofYourPacificID**: The last four digits of your Pacific ID (numerical value).
+
+2. **Example**:  
+If your name is "John Doe" and your Pacific ID ends in "1234", your folder should be named:
+John_1234
+
+3. Inside your folder, **place your code** and any related files.
+
+### How to Submit:
+
+1. Ensure that your folder contains all necessary files for your submission.
+2. **Push your changes** to the GitHub repository with the appropriate folder and files.
+3. **Check that the folder name follows the required format** before submitting.
+
+---
+
+Thank you for your participation! Happy coding!
+
+
