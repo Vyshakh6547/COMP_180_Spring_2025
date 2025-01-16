@@ -1,0 +1,27 @@
+name: Plagiarism Check
+
+on:
+  push:
+    branches:
+      - main  # Or the branch where students submit
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run CPD
+        uses: pmd/pmd-github-action@v1.2.3
+        with:
+          languages: cpp
+          minimum-tokens: 100       
+          format: text                
+
+      - name: Upload CPD report
+        uses: actions/upload-artifact@v3
+        with:
+          name: cpd-report
+          path: cpd.txt
