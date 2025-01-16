@@ -23,7 +23,7 @@ jobs:
         run: |
           python3 -c "
           from mosspy import Moss
-          m = Moss('<YOUR_MOSS_ID>', 'cpp')  # Replace with your Moss ID
+          m = Moss('739591289', 'cpp')  # Replace with your Moss ID
           for file in $(find . -name '*.cpp'):
             m.addFile(file)
           url = m.send()
