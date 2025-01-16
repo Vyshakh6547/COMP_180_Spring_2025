@@ -1,9 +1,9 @@
-name: Plagiarism Check
+name: C++ Static Analysis
 
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   build:
@@ -12,14 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run CPD (Copy-Paste Detector)
-        uses: pmd/pmd-github-action@v2  
-        with:
-          sourcePath: '.'  
-          rulesets: "category/cpp/design/cpd.xml"
+      - name: Install Cppcheck
+        run: sudo apt-get install -y cppcheck
 
-      - name: Upload CPD report
+      - name: Run Cppcheck for C++ code
+        run: cppcheck --enable=all --inconclusive --xml --xml-version=2 . 2> cppcheck-report.xml
+
+      - name: Upload Cppcheck report
         uses: actions/upload-artifact@v3
         with:
-          name: cpd-report
-          path: pmd-cpd.txt  
+          name: cppcheck-report
+          path: cppcheck-report.xml
