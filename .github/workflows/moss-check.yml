@@ -2,32 +2,30 @@ name: Moss Code Style Check
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    types: [ opened, synchronize ]
+    branches:
+      - main  # Replace with your main branch name
 
 jobs:
-  moss_check:
+  moss:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
       - name: Install Moss
         run: |
-          # Download the Moss script using wget
-          wget --https-only https://moss.stanford.edu/results/moss2019.tar.gz
-          
-          # Extract the script
-          tar -xvzf moss2019.tar.gz
-          
-          # Rename the moss.pl script to moss for easier use
-          mv moss2019/moss.pl moss
-          
-          # Make the script executable
-          chmod +x moss
+          sudo apt-get update
+          sudo apt-get install -y perl
+          wget http://theory.stanford.edu/~aiken/moss/moss.pl
+          chmod +x moss.pl
 
-      - name: Run Moss Analysis for C++ Files
+      - name: Run Moss
         run: |
-          # Run Moss analysis with C++ options
-          ./moss -d reports -l c++ -r '*.cpp' .  # C++ language (-l c++) and analyze *.cpp files
+          ./moss.pl -l cpp -d $(find . -name "*.cpp") > moss_results.txt
+
+      - name: Upload Moss results
+        uses: actions/upload-artifact@v3
+        with:
+          name: moss-results
+          path: moss_results.txt
