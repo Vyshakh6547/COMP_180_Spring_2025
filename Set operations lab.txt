@@ -1,5 +1,5 @@
 Set Operations Lab Questions
-(5 points) Let A = {a, b, c, d, e}, B = {c, e, f, g}, and C = {b, d, e, h}. Find:
+(6 points) Let A = {a, b, c, d, e}, B = {c, e, f, g}, and C = {b, d, e, h}. Find:
 a) A - B
 b) B - A
 c) (A - B) ∪ (B - A)
