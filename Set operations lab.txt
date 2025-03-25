@@ -5,7 +5,7 @@ b) B - A
 c) (A - B) ∪ (B - A)
 d) (A - C) ∩ B
 e) A - (B ∩ C)
-f) symmetric difference of A and B
+f) A ⊕ B 
 (5 points) Prove the following set identity by showing that the Left-Hand Side (LHS) is equal to the Right-Hand Side (RHS): A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
 (5 points) Consider sets X, Y, and Z.
 a) Prove that if X ⊆ Y, then X - Y = ∅ (the empty set).
