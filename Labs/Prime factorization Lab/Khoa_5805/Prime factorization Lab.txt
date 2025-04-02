@@ -1,1 +1,41 @@
+5. Write a program to find the prime factorization of a given positive integer.
+The program should take an integer as input and output its prime factors
+in non-decreasing order. For example, if the input is 112, the output should be 2 2 2 2 7.
+int main() {
+    int num, loopNum;
+    cout << "Enter a positive integer: ";
+    cin >> num;
+    loopNum = num;
+    for (int i = 2; i <= sqrt(loopNum); ++i) {
+        while (n % i == 0) {
+            cout << i << " ";
+            n /= i;
+        }
+    }
+    return 0;
+}
 
+6.
+a) Find the greatest common divisor (GCD) and the least common multiple (LCM) of 24 and 50 using the algorithm discussed in class.
+24 = 2^3 * 3 = 2^3 * 3^1 * 5^0
+50 = 2 * 5^2 = 2 * 3^0 * 5^2
+GCD(24, 50) = 2^min(3,1) * 3^min(1,0) * 5^min(0,2) = 2^1 * 3^0 * 5^0 = 2
+LCM(24, 50) = 2^max(3,1) * 3^max(1,0) * 5^max(0,2) = 2^3 * 3^1 * 5^2 = 600
+
+b) Write a program to calculate the GCD of two integers using Euclid’s algorithm. The program should take two integers as input and return their GCD.
+int gcd(int a, int b) {
+  while (b != 0) {
+    int temp = b;
+    b = a % b;
+    a = temp;
+  }
+  return a;
+}
+
+int main() {
+  int num1, num2;
+  cout << "Enter two integers: ";
+  cin >> num1 >> num2;
+  cout << "GCD(" << num1 << ", " << num2 << ") = " << gcd(num1, num2) << endl;
+  return 0;
+}
